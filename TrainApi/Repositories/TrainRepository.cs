@@ -40,6 +40,7 @@ namespace TrainApi.Repositories
 
         public async Task AddTrainAsync(Train train)
         {
+            train.AvailableSeats = train.TotalSeats;
             await _context.Trains.AddAsync(train);
         }
 
